@@ -31,6 +31,6 @@ class Animal {
  5) 클래스는 new를 통해 인스턴스를 생성할 수 있다. */
 
 
-public Class Main {
+public class Main {
 
     }
