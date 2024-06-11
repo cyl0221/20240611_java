@@ -1,6 +1,6 @@
 package p01_class;
 
-public class Animal {
+
   /*
   클래스 선언할 경우
   1) 멤버변수와 메서드가 없어도 클래스를 선언가능.
@@ -9,6 +9,7 @@ public class Animal {
   4) 클래스를 사용하려면 인스턴스로 만들어야 한다.
   5) 클래스는 new를 통해 인스턴스를 생성할 수 있다.
   */
+  public class Animal {
   public int legs;
   String color;
 
