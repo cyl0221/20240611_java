@@ -18,7 +18,7 @@ public class Ex02Types {
 
   public static void main(String[] args) {
     //변수의 종류 : primitive, Reference
-    // primitive type(일반 변수 실제 값을 가짐)
+    // primitive type(일반 변수 실제 값을 가짐/멤버변수???????)
     boolean power = true; // 논리형 = true or false 1byte
     char c1 = 'A'; // 문자형, 2byte, 0~65535 // char = 'HELLO' <== X 한문자만 들어갈 수 있음
     byte b1 = 10; // 정수형, 1byte, 범위 : -128~127 (총 256)
