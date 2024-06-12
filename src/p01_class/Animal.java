@@ -33,15 +33,17 @@ package p01_class;
   - int(X),break(X),public(X),static(X) 등등
 
   */
-public class Animal {
-  public int legs;
-  String color;
+  public class Animal {
+public int legs;
+String color;
 
-  public void run() {
-    System.out.println(legs);
-  }
-    }
-class foo {
+public void run() {
+  System.out.println(legs);
+}
+}
+// 하나의 파일에 main method 복수개 가능
+class Foo {
   public static void main(String[] args) {
-  };
+
+  }
 }
