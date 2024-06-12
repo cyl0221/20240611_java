@@ -40,4 +40,8 @@ public class Animal {
   public void run() {
     System.out.println(legs);
   }
+    }
+class foo {
+  public static void main(String[] args) {
+  };
 }
