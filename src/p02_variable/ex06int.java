@@ -24,6 +24,9 @@ public class ex06int {
     long l1 = 200l; //long = long
     //3. 표현범위가 작은것이 큰것으로 올 때는 묵시적 형변환!
     long l2 = 200; // long = int ==> 뒤에 L을 붙이지 않으면 int로 적용된다.// long l2 = (long)200; 묵시적형변환
+
+    // int i2 = l2; // 큰범위가 작은범위로 올때는 명시적 선언
+    // 다음주에 float 와 double 할 예정
   }
 }
 
