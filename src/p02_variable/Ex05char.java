@@ -6,7 +6,7 @@ import p01_class.Animal;
 public class Ex05char {
     char chr;
   public static void main(String[] args) {
-    char c1 ='A';
+    char c1 ='A'; //65
     Utils.typeOf(c1);
     //System.out.println();
     //System.out.println(c1);
@@ -40,6 +40,8 @@ public class Ex05char {
     char c9 = '\n'; //개행
     char c10 = '\r'; //캐리지 리턴
     char c11 = '\f'; //폼피드 (한 줄 뛰어쓰기)
+    char c12 = '\u0000'; //공백의 헥사값
+    c12 = ' '; // 기본값, 공백
 
     System.out.println(c4);
     System.out.println(c5);

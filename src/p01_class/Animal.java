@@ -7,7 +7,7 @@ package p01_class;
   2) 멤버변수와 메서드를 정의하려고 하면 반드시 클래스를 선언.
   3) 파일명과 일치하는 클래스에만 public 사용가능.
   4) 클래스를 사용하려면 인스턴스로 만들어야 한다.
-  5) 클래스는 new를 통해 인스턴스를 생성할 수 있다.
+  5) 클래스는 new를 통해 인스턴스를 생성할 수 있다. ==> new 생성 연산자
 
   Pascal식 법 ==> 단어를 연결할때 단어의 첫글자는 대문자
   ex) PersonSpec
@@ -21,6 +21,9 @@ package p01_class;
   - API : 주로 API통신 규격에서는 Snake Case를 많이 사용한다.
   - DB : Snake Case
   - Java : Camel Case, Class파일만 UpperCase
+
+==> Class 이름은 대문자로 시작하여 생성
+==> 변수는 소문자로 시작하여 생성
 
   명명규칙
   1)영문 대소 문자와 한글을 사용할 수 있다.

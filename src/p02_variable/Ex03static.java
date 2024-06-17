@@ -31,7 +31,8 @@ public class Ex03static {
     System.out.println(e1.vs);
     e2.vs = 200;
     System.out.println(e1.vs);
-    // instance 각각의 고유값
+    // instance 와 static  시점이 다르다.
+    // instance 각각의 고유값  main method를 열었을때 부터 시작
     // static 공통의 값,
   }
 }

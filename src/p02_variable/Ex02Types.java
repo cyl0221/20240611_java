@@ -5,7 +5,7 @@ import p01_class.Animal;
 
 public class Ex02Types {
   //변수의 종류 : primitive, Reference
-  // primitive type(일반 변수 실제 값을 가짐)
+  // primitive type(일반 변수 실제 값을 가짐/기본형 변수)
   // Reference type(참조형 변수, 주소값을 가짐)
   // 일반 변수의 종류 : 논리형/문자형/정수형/실수형
 
@@ -17,17 +17,17 @@ public class Ex02Types {
   // num = 10; ==> 초기화
   // ==> 선언 + 초기화 =  할당 assignment
   // 지역변수는 전역변수와 다르게 할당까지 꼭 해야 한다.
-  // 멤버변수는 선언만 해도 된다. new 연산자를 통해 기본값으로 초기화
-  boolean power = true;  // 지역변수이기 때문에 할당을 줘야 값이 나온다. // 할당
-  char c1; // 선언 // 지역변수인데 할당을 안했기 때문에 값이 안나옴
-  byte b1;
-  short  s1;
-  int i1;
-  long l1;
-  float f1;
-  double d1;
-  String str;
-  Animal animal; // ==> 전역 변수 들
+  // 멤버변수는 선언만 해도 된다. ==> new 연산자를 통해 초기화를 하지않고 선언만 하면 기본값으로 초기화
+  boolean power = true;  // 지역변수이기 때문에 할당을 줘야 값이 나온다. // 할당 //==> 다른값이랑 호환이 안된다. 기본값은 false
+  char c1; // 선언 // 지역변수인데 할당을 안했기 때문에 값이 안나옴 => 기본값 공백
+  byte b1;  // 기본값 ==> 0
+  short  s1; // 기본값 ==> 0
+  int i1; // 기본값 ==> 0
+  long l1; // 기본값 ==> 0
+  float f1;  // 기본값 ==> 0.0
+  double d1; // 기본값 ==> 0.0
+  String str; // 기본값 ==> null
+  Animal animal; // ==> 전역 변수 들  // 기본값 ==> null
 
 
 
@@ -41,7 +41,7 @@ public class Ex02Types {
     short  s1 = 10; // 정수형, 2byte, 범위 : -32768~32767 총65535
     int i1 = 10; // 정수형 4byte, 범위 : -2147483648~2147483647
     long l1 = 10L; // 정수형, 8byte
-    float f1 = 0.1f;  // 실수형, 4byte 소수점 7째자리 10^-45 ~ 10^38 ==> long보다 크다
+    float f1 = 0.1f;  // 실수형, 4byte 소수점 7째자리 10^-45 ~ 10^38 ==> 표현범위가 long보다 크다
   double d1 = 0.1D; // 실수형, 8byte 소수점 13째자리 10^-324 ~ 10^308
     // Reference type(참조형 변수, 주소값을 가짐)
     String str = "Hello"; System.out.println(str);
