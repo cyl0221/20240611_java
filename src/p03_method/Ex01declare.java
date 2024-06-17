@@ -1,5 +1,7 @@
 package p03_method;
 
+import common.Utils;
+
 public class Ex01declare {
   // return type(총 10가지) : void, primitive, reference
   // void : return 없는 경우
@@ -27,7 +29,11 @@ public class Ex01declare {
   // 구조 :: return type +  method 이름 + 소괄호  // method 이름이 같으면?!
   int print4() {return 10; }
   int print6() {return (int) 0.0;} // 명시적 형변환
-  double print5() {return 10;}
+  double print5() {
+    System.out.println("print5");
+    return 10; //
+//    System.out.println("double"); return 이후의 문장은 효용 없음
+  }
 
   boolean print() {       // 매개변수가 없음
     boolean result = false;
@@ -46,15 +52,67 @@ public class Ex01declare {
     Ex01declare e1 = new Ex01declare();
     e1.print1();
     System.out.println(e1.print2());
+    System.out.println(e1.print5());
     System.out.println(e1.print());
     System.out.println(e1.print(true));
     System.out.println(e1.print('Z')); // 알아서 30번을 호출
     System.out.println(e1.print(10));
     System.out.println(e1.print(6.5));
 
+    Utils.typeOf(10/3);
+    System.out.println(MyMath.divide(10,3));
+    System.out.println(Math.max(1,3));
+    System.out.println(MyMath.share(10,3));
+    System.out.println(MyMath.remain(10,3));
+    System.out.println();
+
+
+    /*Math m1 = new Math();
+    System.out.println(m1.add(1,2));
+    System.out.println(m1.subtract(1,2));
+    System.out.println(m1.multiply(1,2));
+    System.out.println(m1.divide(1,2));*/  //-- math 1번 방법
 
   };
 
 }
+class MyMath {
+  static int add(int n1, int n2) {
+  return n1 + n2; //==> (double) (n1+n1)
+  }
+  static int subtract(int n1, int n2) {
+    return  n1 - n2;
+  }
+  static int multiply(int n1, int n2) {
+    return  n1 * n2;
+  }
+  /*double divide(double n1, double n2) {
+    return  n1 / n2;
+  }*/
+  static double divide(int n1, int n2) {
+    double result = (double) (n1/n2); // ==> int / double == double값
+    return result;
+  }
+  // Quiz 나머지와 몫을 구하는 메서드를 만드시오.
+  public static int share(int n1, int n2) {
+    // int result = n1/n2;
+    return n1/n2;
+  }
 
-class Math
+ /*static double share(int n1, int n2) {
+    return (double) n1/n2;
+ }*/
+ public static int remain(int n1, int n2) {
+   return n1 % n2;
+ }
+
+  /*static double remain(int n1, int n2) {
+    return n1%n2;
+  }*/
+
+  public static void shareRemain(int n1, int n2) {  //method가 method를 부른다 위에 선언되어있는 share와 remain
+    System.out.println("몫은 " + share(n1,n2));
+    System.out.println("나머지 " + remain(n1,n2));
+  }
+}
+
