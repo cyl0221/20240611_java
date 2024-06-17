@@ -2,7 +2,7 @@ package p02_variable;
 
 import common.Utils;
 
-public class ex06int {
+public class Ex06int {
   public static void main(String[] args) {
     byte b1 = 100;
     //byte b2 = 200;

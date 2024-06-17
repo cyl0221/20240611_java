@@ -2,7 +2,7 @@ package p02_variable;
 
 import common.Utils;
 
-public class ex07double {
+public class Ex07double {
   public static void main(String[] args) {
       // float :: -3.4*10^38 ~ 3.4*10^38 (정밀도 : 소수7자리)
       // double :: -1.7*10^308 ~ 1.7*10^308 (정밀도 : 소수13자리)
