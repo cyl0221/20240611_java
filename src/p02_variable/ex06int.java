@@ -29,8 +29,8 @@ public class ex06int {
     //int i2 = l2; ==> 오류발생
     long result = i2 + l2;
     Utils.typeOf(result); //long과 연산을 할 경우 long 타입으로 형변환
-
-    // 다음주에 float 와 double 할 예정
+    int i3 = b1; // int = byte :: 묵시적 형변환(int 표현범위 큼)
+    byte b5 = (byte) i3; //byte = int :: 명시적 형변환
   }
 }
 
