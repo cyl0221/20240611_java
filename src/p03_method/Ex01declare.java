@@ -64,8 +64,7 @@ public class Ex01declare {
     System.out.println(Math.max(1,3));
     System.out.println(MyMath.share(10,3));
     System.out.println(MyMath.remain(10,3));
-    System.out.println();
-
+    MyMath.shareRemain(10,3);
 
     /*Math m1 = new Math();
     System.out.println(m1.add(1,2));
@@ -77,6 +76,9 @@ public class Ex01declare {
 
 }
 class MyMath {
+  //메서드가 가지는 성격
+  // 1) 객체의 속성(상태)을 처리하는 기능
+  // 2) 객체의 속성(상태)를  온전(보호)하게 하는 기능.
   static int add(int n1, int n2) {
   return n1 + n2; //==> (double) (n1+n1)
   }
@@ -111,8 +113,14 @@ class MyMath {
   }*/
 
   public static void shareRemain(int n1, int n2) {  //method가 method를 부른다 위에 선언되어있는 share와 remain
-    System.out.println("몫은 " + share(n1,n2));
-    System.out.println("나머지 " + remain(n1,n2));
+   /* System.out.println("몫은 " + share(n1,n2));
+    System.out.println("나머지 " + remain(n1,n2));*/
+    System.out.println(" 몫은 " + share(n1,n2) +
+                        " 나머지는 " + remain(n1,n2) );
+    System.out.printf("몫은 %d 나머지는 %d \n", share(n1,n2), remain(n1,n2)); // %d : 정수
+    System.out.println(
+        String.format("몫은 %d 나머지는 %d ", share(n1,n2), remain(n1,n2))
+    );
   }
 }
 
