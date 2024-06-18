@@ -26,7 +26,8 @@ public class Ex01declare {
   char print3() {
     return 'C';
   }
-  // 구조 :: return type +  method 이름 + 소괄호  // method 이름이 같으면?!
+  // 구조 :: return type +  method 이름 + 소괄호  사용시 중괄호를 빼고 쓴다.
+  //  소괄호 붙어있는것은 실행하기 위해서 //method 이름이 같으면?!
   int print4() {return 10; }
   int print6() {return (int) 0.0;} // 명시적 형변환
   double print5() {
