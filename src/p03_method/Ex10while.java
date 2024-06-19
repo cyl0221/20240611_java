@@ -44,9 +44,9 @@ public class Ex10while {
 
 
     /*System.out.println(random);*/
-    System.out.println("========내 마음의 숫자를 맞추기 게임========");
+    /*System.out.println("========내 마음의 숫자를 맞추기 게임========");
 
-    int random = (int)(Math.random()*100)+1;
+    int random = (int) (Math.random() * 100) + 1;
     while (true) {
       int answer = Integer.parseInt(JOptionPane.showInputDialog("숫자를 입력하세요"));
       if (answer > random) {
@@ -57,7 +57,7 @@ public class Ex10while {
         System.out.println("정답입니다.");
         break;
       }
-    }
+    }*/
 
 
 
@@ -89,17 +89,50 @@ public class Ex10while {
     }
     }*/
     // JOptionPane 숫자로 들어오는걸 문자로 바꿔주는 것
-  // try catch 문
+    // try catch 문
     do {
-      int you = (int)(Math.random()*3); // 세가지 경우의수를 나타냄
+      int you = (int) (Math.random() * 3); // 세가지 경우의수를 나타냄
       String input = JOptionPane.showInputDialog("가위(0),바위(1),보(2)중에 입력하세요");
+      if (input.equals("end")) {
+        break;
+      }
       int me;
       try {
         me = Integer.parseInt(input);
       } catch (NumberFormatException e) {
         continue;
       }
-    } while (true);
+      String me1 = "";
+      String you1 = "";
 
+      if (me == 0) {
+        me1 = "가위";
+      } else if (me == 1) {
+        me1 = "바위";
+      } else if (me == 2) {
+        me1 = "보";
+      } else {
+
+        continue;
+      }
+
+      if (you == 0) {
+        you1 = "가위";
+      } else if (you== 1) {
+        you1 = "바위";
+      } else if (you== 2) {
+        you1 = "보";
+      }
+      String result;
+      if (me == you) {
+        result = "draw";
+      } else if ((me == 0 && you == 2) || (me == 1 && you == 0) || (me == 2 && you== 1)) {
+        result = "win";
+      } else {
+        result = "lose";
+      }
+      System.out.printf("me: %s\nyou: %s\n%s\n", me1, you1 , result);
+    } while (true);
+    System.out.println("END");
   }
-  }
+}
