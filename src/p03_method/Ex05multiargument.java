@@ -6,7 +6,7 @@ public class Ex05multiargument {
    ma.add(1,2,3); ma.add(new int[]{1,2,3,4});
    ma.add(1,2,3,4,5,6,7,8,9);
    ma.add(new Data(), new Data(), new Data(), new Data());
-  } // multiargument
+  } // multiargument   // ... ==> 스프레드 연산자
 }
 
 class MultiArgument {

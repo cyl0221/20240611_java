@@ -10,8 +10,9 @@ public class Ex04CallByValue {
     System.out.println("main: " + d); // 현재 주소값
     d.value = 100;
     System.out.println(d.value);
-    change(500); //21번 라인(change int) 호출 :: 값
-    change(d.value); //21번 라인(change int) 호출 :: 값
+    change(500); //22번 라인(change int) 호출 :: 값
+    change(d.value); //22번 라인(change int) 호출 :: 값
+    change((int)1.12f); //  22번 기본형타입의 명시적 형변환
     change(d); // 24번 라인 호출(change Data) :: 참조형 변수
     System.out.println(d.value);
 
