@@ -55,6 +55,7 @@ public class Ex10while {
         System.out.println("큽니다");
       } else {
         System.out.println("정답입니다.");
+        break;
       }
     }
 
@@ -79,16 +80,25 @@ public class Ex10while {
           } else {
             System.out.println("정답");
           }
-       *//*
+
     while (random != answer) {
       System.out.println("다시 입력하세요");}
-*//*
+
 
         }
     }
     }*/
-
+    // JOptionPane 숫자로 들어오는걸 문자로 바꿔주는 것
+  // try catch 문
     do {
+      int you = (int)(Math.random()*3); // 세가지 경우의수를 나타냄
+      String input = JOptionPane.showInputDialog("가위(0),바위(1),보(2)중에 입력하세요");
+      int me;
+      try {
+        me = Integer.parseInt(input);
+      } catch (NumberFormatException e) {
+        continue;
+      }
     } while (true);
 
   }
