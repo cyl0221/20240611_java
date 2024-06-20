@@ -21,3 +21,4 @@ abstract class Terran extends  Unit{  // 상속할때 extends 를 사용한다
 class Marine extends Terran {
 
 }
+fdfd
