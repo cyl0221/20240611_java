@@ -26,7 +26,8 @@ public class Ex02Object {
   }
 }*/
 
-//모든 클래스는 Object 를 상속받는다.
+//모든 클래스는 Object 를 상속받는다. extend object는 안써도됨
+
 class Member extends Object {
   String name, mobile; // string을 따로 주지않고 옆에처럼 같이 쓰기도 한다.
 
