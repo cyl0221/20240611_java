@@ -93,7 +93,7 @@ public class Ex10while {
     do {
       int you = (int) (Math.random() * 3); // 세가지 경우의수를 나타냄
       String input = JOptionPane.showInputDialog("가위(0),바위(1),보(2)중에 입력하세요");
-      if (input.equals("end")) {
+      if (input.equals("q")) {
         break;
       }
       int me;
@@ -133,6 +133,6 @@ public class Ex10while {
       }
       System.out.printf("me: %s\nyou: %s\n%s\n", me1, you1 , result);
     } while (true);
-    System.out.println("END");
+    System.out.println("q");
   }
 }
