@@ -1,6 +1,6 @@
 package p05_Inherit;
 
-public class ExAbstract {
+public class Ex09Abstract {
   public static void main(String[] args) {
     //스스로 인스턴스 생성불가 ( 추상클래스, interface)
     /*Abstract abs = new Abstract();
