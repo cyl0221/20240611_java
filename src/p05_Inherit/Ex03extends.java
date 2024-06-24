@@ -12,7 +12,16 @@ public class Ex03extends {
 
 }
 
+
 abstract class Unit { /// 추상적인 class
+ public Unit() {
+   // this(), super()는 공존불가 : 생성자의 맨 첫줄에 있어야하기 때문
+   super();
+   //this ("","",15);
+   System.out.println("야생 동물 생성");
+ }
+
+
   public Unit(String tribe,String name, int hp) {
     super();
     this.tribe = tribe;
