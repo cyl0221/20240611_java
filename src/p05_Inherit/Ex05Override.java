@@ -8,12 +8,15 @@ public class Ex05Override {
     Data d2 = new Data(1);
     System.out.println(d1);
     System.out.println(d2);
+    System.out.println(d1.hashCode());
+    System.out.println(d2.hashCode());
     // if(d1==d2) System.out.println("같다"); //오류 ! hashcode가 다름
     if (d1.equals(d2)) System.out.println("같다");
 
   }
 }
 
+  //equals object가 가지고 있다.
 
 class Data {
   int value;

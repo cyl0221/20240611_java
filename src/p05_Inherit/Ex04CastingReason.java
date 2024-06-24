@@ -49,6 +49,7 @@ abstract class Product {
 class Laptop extends Product {
   public Laptop() {super (300);}
 
+  //super는 부모의 생성자를 호출.
 
 }
 class Tv extends Product {
