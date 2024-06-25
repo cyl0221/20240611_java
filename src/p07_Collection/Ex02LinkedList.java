@@ -10,9 +10,17 @@ public class Ex02LinkedList {
     List ll = new LinkedList();
 
     System.out.println("====순차적 추가====");
-    System.out.println("ArrayList : " + addSequentially(al));
+    System.out.println("ArrayList : " + addSequentially(al)); //걸리는시간?
     System.out.println("LinkedList : " + addSequentially(ll));
-
+    System.out.println("====중간에 추가====");
+    System.out.println("ArrayList : " + addMiddle(al));
+    System.out.println("LinkedList : " + addMiddle(ll));
+    System.out.println("====중간 삭제====");
+    System.out.println("ArrayList : " + removeMiddle(al));
+    System.out.println("LinkedList : " + removeMiddle(ll));
+    System.out.println("====순차적 삭제====");
+    System.out.println("ArrayList : " + removeSequentially(al));
+    System.out.println("LinkedList : " + removeSequentially(ll));
   }
 
   private static long addSequentially(List list) {
@@ -34,7 +42,7 @@ public class Ex02LinkedList {
   }
   private static long removeSequentially(List<String> list) {
     long start = System.currentTimeMillis();
-    for (int i = list.size(); i >=0; i--) {
+    for (int i = list.size()-1; i >=0; i--) {
       list.remove(i); //index로 지움
     }
     long end = System.currentTimeMillis();
