@@ -1,5 +1,8 @@
 package p06_javalang;
 
+import java.util.Arrays;
+import java.util.StringJoiner;
+
 public class Ex01String {
   public static void main(String[] args) {
     String str1 = "hello";
@@ -39,6 +42,23 @@ public class Ex01String {
     System.out.println(str1.lastIndexOf("l")); // 3, 위치하는 순서(맨 뒤에것을 나타내줌)
     System.out.println(str1.lastIndexOf("el")); //1, 위치하는 순서
     System.out.println(str1.replace("l","k")); //hekko, l을 k로 바꿔줌
-
+    System.out.println(str1.replace("o","")); //hell, o가 제거됨
+    String[] arr = "Passion is genesis of genius".split(" "); // 공백을 기준으로 나뉜다.
+    System.out.println(Arrays.toString(arr));
+    String fileName = "abc.index.html"; //
+    System.out.println(fileName.substring(9));
+    System.out.println(fileName.substring(fileName.lastIndexOf(".")+1));
+    System.out.println(fileName.substring(fileName.indexOf(".")+1,fileName.lastIndexOf(".")));
+    System.out.println("hello world".toUpperCase()); // 전체가 대문자로 변경
+    System.out.println("HELLO world".toLowerCase()); // 전체가 소문자로 변경
+    System.out.println("  hello  world  ".trim());// 좌우 공백을 없애준다.
+    System.out.println(String.valueOf(0b100)); //2진수
+    System.out.println(String.valueOf(0010)); //8 진수
+    System.out.println(String.valueOf(0xa0)); //16진수
+    StringJoiner sj = new StringJoiner(" ","'","'");
+    for (String s : arr) {
+      sj.add(s); //위 arr과 합친내용  ("공백내용에 들어갈 내용" , "앞", "뒤")
+    }
+    System.out.println(sj.toString());
   }
 }
