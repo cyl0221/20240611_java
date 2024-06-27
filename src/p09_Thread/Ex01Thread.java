@@ -17,7 +17,8 @@ public class Ex01Thread {
   }
 }
 
-// Thread의 장점 : 별도의 흐름을 생성, 자원을 절약할 ㅅ 있다.
+// Thread의 장점 : 별도의 흐름을 생성, 자원을 절약할 수 있다.
+// Thread를 생성하는 방법 1)Thread를 상속, 2) Runnable 을 implement 하는것
 //class Bomb extends Thread { // --(1)  위 1번하고 같이 쓰인다.
 class Bomb implements Runnable {  // --(2) 위 2번하고 같이 쓰인다.
 private int answer = (int) (Math.random() * 2); // 뒤에 숫자는 랜덤으로 뽑을 숫자의 범위,
