@@ -34,7 +34,7 @@ public class Ex02StreamRange {
     lottoStream.distinct().limit(6).forEach(new IntConsumer() {
       @Override
       public void accept(int value) {
-        System.out.println(value);
+        System.out.printf("%3d",value);
       }
     });
   }
