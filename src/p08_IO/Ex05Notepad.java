@@ -89,7 +89,11 @@ class Notepad extends JFrame {
         }
       }
     });
+  miInfo.addActionListener(e -> {
+    new InfoDialog(this,true);
+  });
   }
+
 
 
   private void arrange() {
@@ -112,6 +116,20 @@ class Notepad extends JFrame {
     setTitle("나의 메모장");
     setSize(500, 300);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setLocationRelativeTo(this);
+    setVisible(true);
+  }
+}
+
+class InfoDialog extends JDialog { //레이아웃이 겹겹이 쌓인다.
+  public InfoDialog(JFrame fr, boolean modal) {
+    super(fr,modal); //super랑 this는 동시에 들어갈 수 없다.
+    JPanel pnl = new JPanel();
+    JLabel label = new JLabel("최유리");
+    pnl.add(label);
+    add(pnl,"Center");
+    setTitle("정보");
+    setSize(200,100);
     setLocationRelativeTo(this);
     setVisible(true);
   }
