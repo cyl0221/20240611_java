@@ -9,6 +9,12 @@ import java.util.stream.Stream;
 
 public class Ex01ArrayCollection {
   public static void main(String[] args) {
+    // Java8 부터 배열 및 컬렉션을 다루기 위해 Stream 사용
+    // 대량의 데이터를 배열이나 컬렉션을 스트림으로 변환해서
+    // 원소를 꺼내어서 일일히 다루지 않고
+    // 처리해야할 내용을 함수형 인터페이스를 통해서 정의만
+    // 해주면 내부 반복을 통해 결과를 생성.
+    // 기술적으로 Fork와 Join을 활용
     String[] stArr1 = {"abc", "def", "ghi"};
     // 배열을 Stream으로 변경
     Stream<String> tmpStream = Arrays.stream(stArr1); //배열 1개만 쓸때
