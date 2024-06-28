@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class Ex01Stream {
+public class Ex04Stream {
   public static void main(String[] args) {
     // stream: 데이터를 처리하는 코드에만 집중
     // 반복되는 요소는 컬렉션이 처리할 수 있게 함.
