@@ -16,7 +16,7 @@ public class Ex02TcpIpMultichatServer {
   }
 
   public void start() {
-    ServerSocket serverSocket = null;
+    ServerSocket serverSocket = null; // client는 socket만 있어도 되지만 server 는 serverSocket이 있어야한다
     Socket socket = null;
 
     try {
