@@ -5,7 +5,7 @@ public class Members {
   private String id, pass, name, mobile;
 
     //회원가입할 때
-  public Members(String id, String pass, String name, String mobile) {
+  public Members() {
     this.id = id;
     this.pass = pass;
     this.name = name;
