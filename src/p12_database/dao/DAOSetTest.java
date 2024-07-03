@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class DAOSetTest {
   public static void main(String[] args) {
-    DAOSet daoSet = new DAOSet();
+    p12_database.dao.DAOSet daoSet = new p12_database.dao.DAOSet();
     try {
       Class.forName("oracle.jdbc.driver.OracleDriver");
       Connection conn = daoSet.connectDB();

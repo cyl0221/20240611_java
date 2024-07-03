@@ -5,11 +5,11 @@ public class Members {
   private String id, pass, name, mobile;
 
     //회원가입할 때
-  public Members() {
-    this.id = id;
+  public Members(String id, String pw, String name, String mobile) {
+    this.id = this.id;
     this.pass = pass;
-    this.name = name;
-    this.mobile = mobile;
+    this.name = this.name;
+    this.mobile = this.mobile;
   }
   // 데이터베이스에서 불러와서 전송할 때
 

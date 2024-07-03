@@ -6,7 +6,7 @@ import p12_database.vo.Members;
 import javax.swing.*;
 import java.awt.*;
 
-public class FrmJoin extends FrmBasic {
+public class FrmJoin extends p12_database.ui.FrmBasic {
   private JLabel lbJoin, lbName, lbID, lbPass, lbMobile;
   private JTextField tfName, tfId, tfMobile;
   private JPasswordField pfPass;
@@ -86,7 +86,7 @@ public class FrmJoin extends FrmBasic {
 
     btnLogin.addActionListener(e -> {
       dispose();
-      new FrmLogin("로그인", 400, 300).setVisible(true);
+      new p12_database.ui.FrmLogin("로그인",400,300).setVisible(true);
     });
     return true;
   }
@@ -101,7 +101,7 @@ public class FrmJoin extends FrmBasic {
 
   private boolean registerMember(String name, String id, String pass, String mobile) {
     MembersDAO dao = new MembersDAO();
-    Members member = new Members();
+    Members member = new Members(id, pass, name, mobile);
     member.setName(name);
     member.setId(id);
     member.setPass(pass);

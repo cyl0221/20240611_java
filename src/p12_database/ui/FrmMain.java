@@ -8,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class FrmMain extends FrmBasic {
+public class FrmMain extends p12_database.ui.FrmBasic{
   private JTable tbl;
   private JScrollPane scp;
   private JLabel lbTitle;
@@ -22,7 +22,7 @@ public class FrmMain extends FrmBasic {
     list = new MembersDAO().getList();
     setTableModel(list);
   }
-  void setTableModel(ArrayList<Members> list) {
+  void setTableModel(ArrayList<Members>list) {
     tableModel = new DefaultTableModel(
         new String[]{"회원번호", "이름", "ID", "Password", "Mobile"}, 0);
     for (int i = 0; i < list.size(); i++) {
@@ -65,7 +65,7 @@ public class FrmMain extends FrmBasic {
       String name = tableModel.getValueAt(row, 1).toString();
       String mobile = tableModel.getValueAt(row, 4).toString();
       Members member = new Members(mno, id, pass, name, mobile);
-      new FrmModify(member, this);
+      new p12_database.ui.FrmModify (member, this);
       /*JOptionPane.showMessageDialog(null, tableModel.getValueAt(row, 0));*/
       // 회원을 수정하는 코드를 작성하여 추가하고 수정되었으면 JTable도 새로고침 되도록 한다.
     });

@@ -5,10 +5,9 @@ import p12_database.vo.Members;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 
-public class MembersDAO extends DAOSet {
+public class MembersDAO extends p12_database.dao.DAOSet{
   public Members loginCheck(String id, String pass) {
     Members members = null;
     try {
