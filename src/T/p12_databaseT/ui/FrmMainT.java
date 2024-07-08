@@ -64,7 +64,7 @@ public class FrmMainT extends FrmBasicT {
       //new FrmModify(this, mno, true);
       HashMap map = new HashMap();
       map.put("owner", this);
-      map.put("members", new MembersT(mno, id, pass, name,mobile));
+      map.put("membersT", new MembersT(mno, id, pass, name,mobile));
       map.put("modal", true);
       MainController.getInstance().dispatchCmd("Modify",map);
       setTableModel(MainController.getInstance().getMembersService().getList());

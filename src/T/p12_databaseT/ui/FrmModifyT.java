@@ -3,10 +3,9 @@ package T.p12_databaseT.ui;
 import T.p12_databaseT.dao.MembersDAOT;
 import T.p12_databaseT.vo.MembersT;
 
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 public class FrmModifyT extends JDialog {
   private JPanel pnlCenter, pnlSouth;
@@ -15,11 +14,11 @@ public class FrmModifyT extends JDialog {
   private JButton btnModify, btnClose;
   private JLabel[] labels;
   private String[] strings;
-  private MembersT members;
+  private MembersT membersT;
 
-  public FrmModifyT(JFrame jFrame, MembersT members, boolean modal) {
-    super(jFrame, "회원번호 "+members.getMno()+" 번의 수정", true);
-    this.members = members;
+  public FrmModifyT(JFrame jFrame, MembersT membersT, boolean modal) {
+    super(jFrame, "회원번호 "+ membersT.getMno()+" 번의 수정", true);
+    this.membersT = membersT;
     init();arrange();inflate();
   }
 
@@ -34,8 +33,8 @@ public class FrmModifyT extends JDialog {
     }
     tfId = new JTextField(10); tfName = new JTextField(10);
     tfMobile = new JTextField(10); pfPass = new JPasswordField(10);
-    tfId.setText(members.getId());tfName.setText(members.getName());
-    tfMobile.setText(members.getMobile());pfPass.setText(members.getPass());
+    tfId.setText(membersT.getId());tfName.setText(membersT.getName());
+    tfMobile.setText(membersT.getMobile());pfPass.setText(membersT.getPass());
     tfId.setEditable(false);
     btnModify = new JButton("수정"); btnClose = new JButton("닫기");
     btnModify.addActionListener(e -> {
@@ -65,7 +64,7 @@ public class FrmModifyT extends JDialog {
       }
       // 유효성검사를 완성하세요!!
       boolean result =
-          new MembersDAOT().updateMembers(new MembersT(members.getMno(), id, pw, name, mobile));
+          new MembersDAOT().updateMembers(new MembersT(membersT.getMno(), id, pw, name, mobile));
       if (result) {
         JOptionPane.showMessageDialog(FrmModifyT.this, "수정되었습니다.");
         tfName.setText("");tfId.setText("");pfPass.setText("");tfMobile.setText("");

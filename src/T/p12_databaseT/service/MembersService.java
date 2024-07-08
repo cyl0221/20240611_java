@@ -21,8 +21,8 @@ public class MembersService {
     return membersDAOT.loginCheck(id, pass);
   }
 
-  public boolean insertMembers(MembersT members) {
-    return membersDAOT.insertMembers(members);
+  public boolean insertMembers(MembersT membersT) {
+    return membersDAOT.insertMembers(membersT);
   }
   public boolean isDuplicatedId(String id) {
     return membersDAOT.isDuplicateId(id);
