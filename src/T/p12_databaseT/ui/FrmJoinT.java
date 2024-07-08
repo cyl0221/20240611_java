@@ -1,7 +1,6 @@
 package T.p12_databaseT.ui;
 
 import T.p12_databaseT.controller.MainController;
-import T.p12_databaseT.dao.MembersDAOT;
 import T.p12_databaseT.vo.MembersT;
 
 import javax.swing.*;
@@ -19,7 +18,7 @@ public class FrmJoinT extends FrmBasicT {
 
   public FrmJoinT() {
     super("회원 가입", 250, 300);
-    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); //FrmBasicT에서 있는 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);를 덮어쓴것
+    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
   }
 
   @Override
@@ -27,40 +26,39 @@ public class FrmJoinT extends FrmBasicT {
     strings = new String[] {"ID", "Password", "Name", "Mobile"};
     labels = new JLabel[strings.length];
     pnlCenter = new JPanel(new GridLayout(strings.length, 2));
-    pnlCenter.setBorder(BorderFactory.createEmptyBorder(0,30,20,30));
+    pnlCenter.setBorder(BorderFactory.createEmptyBorder(0,30, 20, 30));
     pnlSouth = new JPanel();
     for (int i = 0; i < strings.length; i++) {
       labels[i] = new JLabel(strings[i]);
     }
     tfId = new JTextField(10); tfName = new JTextField(10);
     tfMobile = new JTextField(10); pfPass = new JPasswordField(10);
-
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosing(WindowEvent e) {
         int choice = JOptionPane.showConfirmDialog(null,
-            "로그인으로 이동하시겠어요?","선택하시오", JOptionPane.YES_NO_OPTION);
+            "로그인으로 이동하시겠어요?", "선택하시오",
+            JOptionPane.YES_NO_OPTION);
         if (choice == 0) {
-          MainController.getInstance().dispatchCmd("login" ,null);
-          dispose();
+          MainController.getInstance().dispatchCmd("Login",null);dispose();
         }
       }
     });
-
     btnJoin = new JButton("회원 가입"); btnLogin = new JButton("로그인");
     btnJoin.addActionListener(e -> {
       String id = tfId.getText();
       String pw = new String(pfPass.getPassword());
       String name = tfName.getText();
       String mobile = tfMobile.getText();
-      if (id==null || id.equals("")) {
+      if (id == null || id.equals("")) {
         JOptionPane.showMessageDialog(FrmJoinT.this, "ID를 확인하세요");
         tfId.requestFocus();
         return;
       } else {
-        boolean tmp = new MembersDAOT().isDuplicateId(id);
+        boolean tmp = MainController.getInstance()
+            .getMembersService().isDuplicatedId(id);
         if(tmp){
-          JOptionPane.showMessageDialog(this,"중복된 ID입니다.");
+          JOptionPane.showMessageDialog(this, "중복된 ID입니다.");
           tfId.setText("");tfId.requestFocus();
           return;
         }
@@ -70,21 +68,31 @@ public class FrmJoinT extends FrmBasicT {
         pfPass.requestFocus();
         return;
       }
-      // 유효성검사를 완성하세요!!
-      boolean result =
-          new MembersDAOT().insertMembers(new MembersT(id, pw, name, mobile));
-      if (result) {
-        JOptionPane.showMessageDialog(this, "등록되었습니다.");
-      } else {
-        JOptionPane.showMessageDialog(this, "등록 실패하였습니다.");
+      if (name.equals("")) {
+        JOptionPane.showMessageDialog(FrmJoinT.this, "이름을 확인하세요");
+        tfName.requestFocus();
+        return;
       }
-    });
+      if (mobile.equals("")) {
+        JOptionPane.showMessageDialog(FrmJoinT.this, "Mobile을 확인하세요");
+        tfMobile.requestFocus();
+        return;
+      }
+      // 유효성검사를 완성하세요!!
+      boolean result = MainController.getInstance()
+          .getMembersService().insertMembers(new MembersT(id, pw, name, mobile));
+      if (result) {
+        JOptionPane.showMessageDialog(FrmJoinT.this, "등록되었습니다.");
+        tfName.setText("");tfId.setText("");pfPass.setText("");tfMobile.setText("");
+      } else {
+        JOptionPane.showMessageDialog(FrmJoinT.this, "등록 실패하였습니다.");
+      }
 
+    });
     btnLogin.addActionListener(e -> {
-      MainController.getInstance().dispatchCmd("Login",null); dispose();
+      MainController.getInstance().dispatchCmd("Login", null);dispose();
     });
   }
-
 
   @Override
   public void arrange() {

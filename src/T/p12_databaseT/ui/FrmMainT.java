@@ -18,21 +18,20 @@ public class FrmMainT extends FrmBasicT {
   private DefaultTableModel tableModel;
   private JPanel pnlBtn;
   private JButton btnModify, btnDelete;
-  private ArrayList<MembersT> list;
 
   public FrmMainT() {
     super("회원정보관리 "
         + MainController.getInstance().getSession().getName()
-        + "님 환영합니다.", 600, 600);
-    setTableModel(list);
+        +"님 환영합니다.", 600, 600);
+    setTableModel(MainController.getInstance().getMembersService().getList());
   }
 
   void setTableModel(ArrayList<MembersT> list) {
-    tableModel.setRowCount(0);  // JTable의 기존 행을 지우고 추가
+    tableModel.setRowCount(0);// JTable의 기존 행을 지우고 추가
     for (int i = 0; i < list.size(); i++) {
       MembersT m = list.get(i);
       tableModel.addRow(new String[]{
-          m.getMno() + "",m.getName(), m.getId(), m.getPass(),
+          m.getMno() + "",  m.getName(),m.getId(), m.getPass(),
           m.getMobile()});
     }
     tbl.setModel(tableModel);
@@ -55,21 +54,20 @@ public class FrmMainT extends FrmBasicT {
         JOptionPane.showMessageDialog(null, "회원을 먼저 선택하세요");
         return;
       }
-      int mno =  Integer.parseInt(tableModel.getValueAt(row, 0).toString());
+      int mno = Integer.parseInt(tableModel.getValueAt(row, 0).toString());
       String name = tableModel.getValueAt(row, 1).toString();
       String id = tableModel.getValueAt(row, 2).toString();
       String pass = tableModel.getValueAt(row, 3).toString();
       String mobile = tableModel.getValueAt(row, 4).toString();
-      //JOptionPane.showMessageDialog(null, tableModel.getValueAt(row, 0));// JOptionPane.showMessageDialog(null, mno));
+      //JOptionPane.showMessageDialog(null, mno);
       // 회원을 수정하는 코드를 작성하여 추가하고 수정되었으면 JTable도 새로고침 되도록 한다.
-      //new FrmModifyT(this, mno, true); 현업에서 많이 쓰임
+      //new FrmModify(this, mno, true);
       HashMap map = new HashMap();
-      map.put("owner",this);
-      map.put("members",new MembersT(mno,id,pass,name,mobile));
+      map.put("owner", this);
+      map.put("members", new MembersT(mno, id, pass, name,mobile));
       map.put("modal", true);
       MainController.getInstance().dispatchCmd("Modify",map);
-
-      setTableModel(new MembersDAOT().getList());
+      setTableModel(MainController.getInstance().getMembersService().getList());
     });
     btnDelete = new JButton("삭제");
     btnDelete.addActionListener(e -> {
@@ -79,13 +77,16 @@ public class FrmMainT extends FrmBasicT {
         return;
       }
       int choice = JOptionPane.showConfirmDialog(null,
-          "삭제하시겠어요?","삭제 선택", JOptionPane.YES_NO_OPTION); // yes :: 0 no :: 1
+          "삭제하시겠어요?", "삭제 선택",
+          JOptionPane.YES_NO_OPTION); //yes 1, no 0
+      System.out.println("choice:"+choice);
       if (choice == 0) {
-        int mno =  Integer.parseInt(tableModel.getValueAt(row, 0).toString());
+        int mno = Integer.parseInt(tableModel.getValueAt(row, 0).toString());
         tableModel.removeRow(row);
         // ui에서 지웠으면 Database에서도 같이 지워야 함.
-        new MembersDAOT().deleteMembers(mno);
+        MainController.getInstance().getMembersService().deleteMembers(mno);
       }
+
     });
   }
 
@@ -97,4 +98,6 @@ public class FrmMainT extends FrmBasicT {
     add(scp, "Center");
     add(pnlBtn, "South");
   }
+
+
 }

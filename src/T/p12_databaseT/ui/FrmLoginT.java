@@ -48,7 +48,8 @@ public class FrmLoginT extends FrmBasicT {
           }
         });
     btnJoin.addActionListener(e -> {
-      MainController.getInstance().dispatchCmd("Join",null);
+      MainController.getInstance().dispatchCmd("Join", null);
+      //new FrmJoinT();
       dispose();
     });
     btnClose.addActionListener(e -> {
@@ -65,7 +66,7 @@ public class FrmLoginT extends FrmBasicT {
       JOptionPane.showMessageDialog(this, "없는 ID입니다.");
     } else {
       MainController.getInstance().setSession(membersT);
-      MainController.getInstance().dispatchCmd("Main",null);
+      MainController.getInstance().dispatchCmd("Main", null);
       //new FrmMainT();
       dispose();
     }
